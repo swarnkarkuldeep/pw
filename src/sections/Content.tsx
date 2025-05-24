@@ -3,63 +3,115 @@ import { motion } from 'framer-motion';
 
 const Content: React.FC = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="min-h-screen flex items-center py-12 bg-[#EEF0DD] relative">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row gap-12">
-          {/* Vertical Heading */}
-          <div className="md:w-1/6">
-            <motion.h2 
-              className="text-5xl md:text-7xl font-black text-[#EEF0DD] -rotate-90 origin-left whitespace-nowrap h-0 md:h-auto md:mt-32"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              CONTENT
-            </motion.h2>
-          </div>
-          
-          {/* Image */}
-          <div className="md:w-2/5">
-            <motion.div 
-              className="relative aspect-[3/4] bg-gray-100 overflow-hidden rounded-lg"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              {/* Replace with your image */}
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                <span>Your Image Here</span>
+        <div className="flex flex-col md:flex-row gap-12 items-center">
+          {/* Content and Image Container */}
+          <div className="w-full">
+            <div className="flex flex-col md:flex-row gap-8 items-center">
+              {/* Image */}
+              <div className="md:w-1/2 flex items-center">
+                <motion.div 
+                  className="relative aspect-[4/5] bg-gray-100 overflow-hidden "
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                  <img
+                    src="https://i.pinimg.com/736x/7a/42/cf/7a42cf16bf68400c4dbde2f4d9dbc96e.jpg"
+                    alt="Kuldeep Swarnkar"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
               </div>
-            </motion.div>
-          </div>
-          
-          {/* Content */}
-          <div className="md:w-1/2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <h3 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: 'Huitside, sans-serif' }}>
-                Section Title
-              </h3>
-              <div className="space-y-4 text-lg leading-relaxed" style={{ fontFamily: '"Roboto Mono", monospace' }}>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                <p>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <button className="mt-6 px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-300">
-                  Learn More
-                </button>
+              
+              {/* Content */}
+              <div className="md:w-1/2">
+                <div className="py-8 pl-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                >
+                  <nav className="space-y-10">
+                    <div>
+                      <a 
+                        href="#about" 
+                        className="text-6xl md:text-7xl font-bold hover:text-gray-700 transition-colors duration-300 block mb-8 tracking-wider"
+                        style={{ fontFamily: 'Huitside, sans-serif', letterSpacing: '0.05em' }}
+                      >
+                        01. About Me
+                      </a>
+                    </div>
+                    <div>
+                      <a 
+                        href="#experience" 
+                        className="text-6xl md:text-7xl font-bold hover:text-gray-700 transition-colors duration-300 block mb-8 tracking-wider"
+                        style={{ fontFamily: 'Huitside, sans-serif', letterSpacing: '0.05em' }}
+                      >
+                        02. Experience
+                      </a>
+                    </div>
+                    <div>
+                      <a 
+                        href="#education" 
+                        className="text-6xl md:text-7xl font-bold hover:text-gray-700 transition-colors duration-300 block mb-8 tracking-wider"
+                        style={{ fontFamily: 'Huitside, sans-serif', letterSpacing: '0.05em' }}
+                      >
+                        03. Education
+                      </a>
+                    </div>
+                    <div>
+                      <a 
+                        href="#skills" 
+                        className="text-6xl md:text-7xl font-bold hover:text-gray-700 transition-colors duration-300 block mb-8 tracking-wider"
+                        style={{ fontFamily: 'Huitside, sans-serif', letterSpacing: '0.05em' }}
+                      >
+                        04. Technical Skills
+                      </a>
+                    </div>
+                    <div>
+                      <a 
+                        href="#portfolio" 
+                        className="text-6xl md:text-7xl font-bold hover:text-gray-700 transition-colors duration-300 block mb-8 tracking-wider"
+                        style={{ fontFamily: 'Huitside, sans-serif', letterSpacing: '0.05em' }}
+                      >
+                        05. Portfolio
+                      </a>
+                    </div>
+                    <div>
+                      <a 
+                        href="#contact" 
+                        className="text-6xl md:text-7xl font-bold hover:text-gray-700 transition-colors duration-300 block mb-8 tracking-wider"
+                        style={{ fontFamily: 'Huitside, sans-serif', letterSpacing: '0.05em' }}
+                      >
+                        06. Contact
+                      </a>
+                    </div>
+                  </nav>
+                </motion.div>
+                </div>
               </div>
-            </motion.div>
+            </div>
+          </div>
+          {/* Vertical Heading - Right Side */}
+          <div className="hidden md:flex items-center justify-center h-full absolute right-14 top-1/2 -translate-y-1/2 w-32">
+            <h2 
+              className="text-6xl font-black text-black"
+              style={{
+                transform: 'rotate(-90deg)',
+                transformOrigin: 'center',
+                whiteSpace: 'nowrap',
+                position: 'absolute',
+                width: 'max-content',
+                fontSize: '18rem',
+                letterSpacing: '0.1em',
+              }}
+            >
+              CONTENTS
+            </h2>
           </div>
         </div>
       </div>
