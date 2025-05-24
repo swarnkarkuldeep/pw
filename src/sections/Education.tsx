@@ -1,6 +1,5 @@
 import React from 'react';
 import Section from '../components/Section';
-import Parallax from '../components/Parallax';
 import { motion } from 'framer-motion';
 
 const Education: React.FC = () => {
