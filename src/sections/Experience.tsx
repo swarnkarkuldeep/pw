@@ -6,69 +6,75 @@ import { motion } from 'framer-motion';
 const experiences = [
   {
     id: 1,
-    role: "Senior Frontend Developer",
-    company: "Tech Innovations Inc.",
-    period: "2021 - Present",
-    description: "Leading the frontend development team, architecting scalable solutions, and implementing cutting-edge technologies to create exceptional user experiences."
+    role: "Frontend Developer",
+    period: "2023 - Present",
+    description: "Developed responsive and interactive web applications using HTML, CSS. Collaborated with UI/UX designers and backend developers to integrate front-end components with backend services, ensuring cohesive and functional end-to-end solutions"
   },
   {
     id: 2,
     role: "UI/UX Designer",
-    company: "Creative Solutions",
-    period: "2018 - 2021",
-    description: "Designed intuitive interfaces and user experiences for web and mobile applications, collaborated with cross-functional teams to deliver cohesive digital products."
+    period: "2022 - Present",
+    description: "Created visually appealing and functional interfaces for web and mobile applications, focusing on enhancing user interaction and satisfaction. Worked closely with cross-functional teams, including developers and product managers, to ensure seamless integration of design elements and alignment with business objectives. Has Professional Knowledge for Figma and Adobe XD"
   },
   {
     id: 3,
     role: "Web Developer",
-    company: "Digital Crafters",
-    period: "2016 - 2018",
-    description: "Developed responsive websites and web applications, implemented modern frontend frameworks, and collaborated with designers to translate mockups into functional interfaces."
+    period: "2020 - Present",
+    description: "Had numerous jobs for photo and video editing from small youtubers and social media influencers. Had multiple jobs for Graphic, Logo, print designing and content writing."
   }
 ];
 
 const Experience: React.FC = () => {
   return (
-    <Section id="experience" className="min-h-screen grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-      <div className="md:col-span-5 h-screen md:h-[80vh] relative">
-        <Parallax speed={0.1} className="h-full">
-          <img 
-            src="https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-            alt="Experience" 
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-black opacity-10"></div>
-        </Parallax>
-      </div>
-      
-      <div className="md:col-span-7 p-8 md:p-16">
-        <motion.h2 
-          className="section-heading mb-12"
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          02 - EXPERIENCE
-        </motion.h2>
-
-        <div className="space-y-16">
-          {experiences.map((exp) => (
-            <motion.div 
-              key={exp.id}
-              className="experience-item"
-              initial={{ x: 100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: exp.id * 0.1 }}
+    <Section id="experience" className="min-h-screen py-12 bg-[#EEF0DD] relative">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Heading and Image */}
+          <div className="space-y-2">
+            <motion.h2 
+              className="text-7xl md:text-8xl font-bold tracking-wider mb-2" 
+              style={{ fontFamily: 'Huitside, sans-serif', letterSpacing: '0.15em', fontSize: '12rem' }}
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              EXPERIENCE
+            </motion.h2>
+            
+            <motion.div
+              className="relative w-full aspect-square overflow-hidden shadow-2xl"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-4xl md:text-5xl font-bold mb-4">{exp.role}</h3>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                <h4 className="text-2xl md:text-3xl">{exp.company}</h4>
-                <span className="text-xl mt-2 md:mt-0">{exp.period}</span>
-              </div>
-              <p className="text-xl leading-relaxed">{exp.description}</p>
+              <img 
+                src="https://i.pinimg.com/736x/6e/dd/35/6edd353918d5fb7e699d9627143e1f06.jpg" 
+                alt="Experience" 
+                className="w-full h-full object-cover"
+              />
             </motion.div>
-          ))}
+          </div>
+          
+          {/* Right Column - Experience Content */}
+          <div className="space-y-12 pl-12 pt-48">
+            {experiences.map((exp) => (
+              <motion.div 
+                key={exp.id}
+                className="experience-item"
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: exp.id * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex justify-between items-baseline mb-2">
+                  <h3 className="text-3xl md:text-4xl font-bold">{exp.role}</h3>
+                  <span className="text-2xl md:text-3xl ml-4">{exp.period}</span>
+                </div>
+                <p className="text-lg leading-relaxed">{exp.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </Section>

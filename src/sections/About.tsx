@@ -1,50 +1,67 @@
 import React from 'react';
-import Section from '../components/Section';
-import Parallax from '../components/Parallax';
 import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   return (
-    <Section id="about" className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-      <motion.div 
-        className="md:col-span-7 p-8 md:p-16"
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 className="section-heading mb-12">01 - ABOUT ME</h2>
+    <section id="about" className="min-h-screen flex items-center py-12 bg-[#EEF0DD] relative">
+      <div className="container mx-auto px-4 md:px-6">
+        {/* Heading */}
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-7xl md:text-8xl font-bold tracking-wider" style={{ fontFamily: 'Huitside, sans-serif', letterSpacing: '0.2em', fontSize: '15rem' }}>
+            ABOUT ME
+          </h2>
+        </motion.div>
         
-        <div className="space-y-8">
-          <p className="text-xl leading-relaxed">
-            A creative technologist with a passion for merging design and functionality. 
-            I specialize in crafting digital experiences that are both visually striking 
-            and technically sound.
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Description */}
+          <div className="space-y-4 pr-12 ml-24 self-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-2xl leading-tight" style={{ fontFamily: 'Whoomp' }}>
+                Hey! I'm Kuldeep - a full-stack creative who blends design, development, and a touch of data magic to build digital experiences that don't just work - they wow. I specialize in UI/UX design, responsive web development, and wireframing user flows that actually make sense. Whether I'm sketching out concepts in Figma or coding pixel-perfect layouts, I'm all about bridging form and function.
+              </p>
+              
+              <p className="text-2xl leading-tight mt-2" style={{ fontFamily: 'Whoomp' }}>
+                But I don't stop at the front end. I've got a thing for machine learning, and I love training data models - especially in Natural Language Processing - to build apps that understand and respond like humans. When I'm not coding or designing, I'm probably editing visuals to bring extra life to a project or experimenting with new tech to keep things fresh.
+              </p>
+              
+              <p className="text-2xl leading-tight mt-2" style={{ fontFamily: 'Whoomp' }}>
+                I enjoy working on everything from sleek portfolio sites to data-driven tools and creative prototypes. Curious by nature and always learning, I aim to build things that are smart, beautiful, and actually useful.
+              </p>
+            </motion.div>
+          </div>
           
-          <p className="text-xl leading-relaxed">
-            With a background in both design and development, I bridge the gap between 
-            aesthetic vision and technical implementation, ensuring that beautiful designs 
-            become fully functional digital products.
-          </p>
-          
-          <p className="text-xl leading-relaxed">
-            My approach combines strategic thinking with attention to detail, 
-            resulting in work that not only looks impressive but also delivers on 
-            business objectives and user needs.
-          </p>
+          {/* Right Column - Image */}
+          <div className="flex justify-center items-start">
+            <motion.div
+              className="w-full max-w-3xl"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="relative w-full h-[600px] overflow-hidden shadow-2xl">
+                <img
+                  src="https://i.pinimg.com/736x/6e/dd/35/6edd353918d5fb7e699d9627143e1f06.jpg"
+                  alt="About Me"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </motion.div>
-      
-      <div className="md:col-span-5 h-screen md:h-[80vh] relative overflow-hidden">
-        <Parallax speed={0.1} className="h-full">
-          <img 
-            src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-            alt="Portrait" 
-            className="w-full h-full object-cover object-center"
-          />
-        </Parallax>
       </div>
-    </Section>
+    </section>
   );
 };
 

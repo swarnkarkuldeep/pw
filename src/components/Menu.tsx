@@ -4,7 +4,6 @@ import { Menu as MenuIcon, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const menuItems = [
-  { id: 'hero', label: 'RESUME' },
   { id: 'about', label: '01 - ABOUT ME' },
   { id: 'experience', label: '02 - EXPERIENCE' },
   { id: 'education', label: '03 - EDUCATION/INSTITUTION' },
@@ -80,8 +79,8 @@ const Menu: React.FC<MenuProps> = ({ isOpen, toggleMenu }) => {
         animate={isOpen ? "open" : "closed"}
         variants={menuVariants}
       >
-        <div className="w-full max-w-4xl mx-auto">
-          <ul className="space-y-2 md:space-y-4">
+        <div className="w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between">
+          <ul className="space-y-2 md:space-y-4 flex-1">
             {menuItems.map((item, i) => (
               <motion.li 
                 key={item.id}
@@ -91,7 +90,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, toggleMenu }) => {
                 onClick={() => handleMenuItemClick(item.id)}
               >
                 <div className="relative z-10 px-4 py-3 md:py-4 cursor-pointer">
-                  <span className="text-3xl md:text-6xl font-bold text-black group-hover:text-white transition-colors duration-300">
+                  <span className="text-3xl md:text-6xl font-bold text-black group-hover:text-[#EEF0DD] transition-colors duration-300">
                     {item.label}
                   </span>
                 </div>
@@ -99,6 +98,14 @@ const Menu: React.FC<MenuProps> = ({ isOpen, toggleMenu }) => {
               </motion.li>
             ))}
           </ul>
+          {/* Image on the right side */}
+          <div className="mt-8 md:mt-0 md:ml-12 flex-shrink-0">
+            <img
+              src="https://i.pinimg.com/736x/7a/42/cf/7a42cf16bf68400c4dbde2f4d9dbc96e.jpg"
+              alt="Menu Side"
+              className="w-60 h-[40rem] object-cover shadow-lg"
+            />
+          </div>
         </div>
       </motion.div>
     </>

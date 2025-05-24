@@ -12,9 +12,21 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Whoomp';
+  src: url('../../fonts/WhoompdemoRegular-nArlJ.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   html {
     font-family: 'Roboto Mono', monospace;
+  }
+  
+  p {
+    font-family: 'Whoomp', sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -25,6 +37,18 @@
 :root {
   --background-color: #EEF0DD;
   --text-color: #111111;
+  
+  /* Text selection styles */
+  ::selection {
+    background-color: #000000;
+    color: #EEF0DD;
+  }
+  
+  /* For Firefox */
+  ::-moz-selection {
+    background-color: #000000;
+    color: #EEF0DD;
+  }
   --spacing: 12px;
   --transition-speed: 0.5s;
 }

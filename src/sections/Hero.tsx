@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
         >
           {/* Hero Image */}
           <img
-            src="https://i.pinimg.com/736x/2d/39/14/2d3914f0de70f7dc37ab7f692a2965e2.jpg"
+            src="https://i.pinimg.com/736x/6e/dd/35/6edd353918d5fb7e699d9627143e1f06.jpg"
             alt="Kuldeep Swarnkar"
             className="w-full h-full object-cover"
           />
