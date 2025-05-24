@@ -59,38 +59,43 @@ const Menu: React.FC<MenuProps> = ({ isOpen, toggleMenu }) => {
   return (
     <>
       <button 
-        className={`menu-button ${isOpen ? 'active' : ''}`} 
+        className={`fixed top-8 right-8 z-[100] w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 ${
+          isOpen 
+            ? 'bg-black text-white' 
+            : 'bg-[#EEF0DD] text-black hover:bg-[#e0e2cf] shadow-md'
+        }`}
         onClick={toggleMenu}
-        aria-label="Toggle Menu"
+        aria-label={isOpen ? 'Close Menu' : 'Open Menu'}
       >
         {isOpen ? (
-          <X size={30} />
+          <X size={28} className="transition-opacity duration-300" />
         ) : (
-          <>
-            <span></span>
-            <span></span>
-            <span></span>
-          </>
+          <MenuIcon size={28} className="transition-opacity duration-300" />
         )}
       </button>
 
       <motion.div 
-        className="fixed inset-0 bg-[#EEF0DD] z-50 flex items-center justify-center"
+        className="fixed inset-0 bg-[#EEF0DD] z-[99] flex items-center justify-center px-4 py-20 overflow-y-auto"
         initial="closed"
         animate={isOpen ? "open" : "closed"}
         variants={menuVariants}
       >
-        <div className="container mx-auto">
-          <ul className="flex flex-col space-y-6 md:space-y-12">
+        <div className="w-full max-w-4xl mx-auto">
+          <ul className="space-y-2 md:space-y-4">
             {menuItems.map((item, i) => (
               <motion.li 
                 key={item.id}
                 custom={i}
                 variants={itemVariants}
-                className="text-4xl md:text-7xl font-bold cursor-pointer hover:text-gray-700 transition-colors"
+                className="group relative overflow-hidden"
                 onClick={() => handleMenuItemClick(item.id)}
               >
-                {item.label}
+                <div className="relative z-10 px-4 py-3 md:py-4 cursor-pointer">
+                  <span className="text-3xl md:text-6xl font-bold text-black group-hover:text-white transition-colors duration-300">
+                    {item.label}
+                  </span>
+                </div>
+                <div className="absolute inset-0 bg-black scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out"></div>
               </motion.li>
             ))}
           </ul>

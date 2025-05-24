@@ -3,53 +3,55 @@ import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
   return (
-    <section id="hero" className="relative h-screen grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden">
-      <div className="flex flex-col justify-center p-8 md:p-16">
+    <section className="relative min-h-screen flex flex-col md:flex-row bg-[#EEF0DD] overflow-hidden">
+      {/* Left Side - Horizontal Heading */}
+      <div className="w-full md:w-2/5 h-1/2 md:h-screen flex items-start justify-start p-8 md:p-16 bg-[#EEF0DD]">
         <motion.h1 
-          className="mega-text text-black"
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 1.2, ease: "easeOut" }}
+          className="text-[12rem] md:text-[20rem] font-black text-black leading-none tracking-widest"
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          style={{ fontFamily: 'Huitside, sans-serif' }}
         >
-          RE<br/>SUME
+          <span className="block -mb-10 md:-mb-16">RE-</span>
+          <span className="block -mt-10 md:-mt-16">SUME</span>
         </motion.h1>
+      </div>
 
-        <motion.div 
-          className="max-w-lg"
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.6, duration: 1.2 }}
+      {/* Right Side - Large Rectangle Image */}
+      <div className="w-full md:w-3/5 h-1/2 md:h-screen relative">
+        <motion.div
+          className="w-full h-full bg-gray-200 flex items-center justify-center overflow-hidden"
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
         >
-          <h2 className="text-5xl font-bold mb-6">KULDEEP SWARNKAR</h2>
-          <p className="text-xl leading-relaxed">
-            Caffeinated and code-obsessed — I design slick, user-friendly interfaces, 
-            build responsive and dynamic websites, and wireframe like a pro. 
-            From crafting intuitive user flows to training data models, 
-            I blend creativity with logic to bring digital ideas to life.
-          </p>
+          {/* Hero Image */}
+          <img
+            src="https://i.pinimg.com/736x/2d/39/14/2d3914f0de70f7dc37ab7f692a2965e2.jpg"
+            alt="Kuldeep Swarnkar"
+            className="w-full h-full object-cover"
+          />
+          
+          {/* Content Overlay */}
+          <motion.div 
+            className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/70 to-transparent text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: '"Roboto Mono", monospace', color: '#EEF0DD' }}>Kuldeep Swarnkar</h2>
+            <p className="text-base md:text-lg max-w-2xl leading-relaxed" style={{ fontFamily: '"Roboto Mono", monospace', color: '#EEF0DD' }}>
+              Caffeinated and code-obsessed. I design slick, user-friendly interfaces, 
+              build responsive and dynamic websites, and wireframe like a pro. From 
+              crafting intuitive user flows to training data models (NLP too), I blend 
+              creativity with logic to bring digital ideas to life.
+              <br /><br />
+              <span>Oh, and I edit photos too - cuz every pixel counts.</span>
+            </p>
+          </motion.div>
         </motion.div>
       </div>
-
-      <div className="relative h-full">
-        <img 
-          src="https://images.pexels.com/photos/3178938/pexels-photo-3178938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-          alt="Background" 
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-[#EEF0DD] mix-blend-screen"></div>
-      </div>
-
-      <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
-      >
-        <div className="text-center">
-          <p className="text-sm mb-4">SCROLL DOWN</p>
-          <div className="w-0 h-0 border-l-[30px] border-r-[30px] border-t-[55px] border-l-transparent border-r-transparent border-t-black"></div>
-        </div>
-      </motion.div>
     </section>
   );
 };
