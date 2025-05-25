@@ -68,7 +68,7 @@ const Experience: React.FC = () => {
           {/* Left Column - Image */}
           <div className="lg:col-span-1 px-4 lg:sticky lg:top-24">
             <div 
-              className="relative w-full aspect-[3/4] overflow-hidden shadow-2xl transform transition-all duration-700 hover:shadow-2xl hover:scale-[1.02] hover:rotate-1"
+              className="relative w-full aspect-[3/4] overflow-hidden transform transition-all duration-700 hover:shadow-2xl hover:scale-[1.02] hover:rotate-1"
               style={{
                 opacity: isInView ? 1 : 0,
                 transform: isInView ? 'translateX(0)' : 'translateX(-30px)'

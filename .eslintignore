@@ -1,0 +1,150 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+build
+.next
+out
+
+# Cache directories
+.cache
+.parcel-cache
+
+# Test coverage
+coverage
+
+# Environment files
+.env
+.env.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Vite
+vite.config.js
+vite.config.ts
+
+# TypeScript
+tsconfig.json
+tsconfig.node.json
+
+# Next.js
+.next/
+
+# Public directory
+public/
+
+# Config files
+*.config.js
+*.config.ts
+
+# Test files
+**/__tests__/**
+**/*.test.*
+**/*.spec.*
+
+# Storybook
+.storybook/
+
+# Cypress
+cypress/
+
+# Playwright
+playwright-report/
+test-results/
+
+# Jest
+jest.config.js
+jest.setup.js
+
+# Prettier
+.prettierrc
+.prettierignore
+
+# ESLint
+.eslintcache
+
+# TypeScript declaration files
+**/*.d.ts
+
+# Build output
+out/
+build/
+.next/
+.nuxt/
+.nuxt/
+.output/
+
+# Cache directories
+.cache/
+.parcel-cache/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode/*
+!.vscode/extensions.json
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Build files
+build/
+dist/
+.next/
+.nuxt/
+.output/
+
+# Dependency directories
+node_modules/
+
+# Test coverage directory
+coverage/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode/*
+!.vscode/extensions.json
+
+# System Files
+.DS_Store
+Thumbs.db

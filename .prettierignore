@@ -1,0 +1,159 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+*.html
+
+# Ignore all CSS files:
+*.css
+
+# Ignore all Markdown files:
+*.md
+
+# Ignore all JSON files:
+*.json
+
+# Ignore all YAML files:
+*.yaml
+*.yml
+
+# Ignore all lock files:
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore all hidden directories:
+.*
+!.editorconfig
+!.gitignore
+
+# Ignore all node_modules directories:
+node_modules
+
+# Ignore all dist directories:
+dist
+
+# Ignore all .next directories:
+.next
+
+# Ignore all .vscode directories:
+.vscode
+
+# Ignore all .idea directories:
+.idea
+
+# Ignore all .DS_Store files:
+.DS_Store
+
+# Ignore all .env files:
+.env*
+!.env.example
+
+# Ignore all .next directories:
+.next
+
+# Ignore all .vercel directories:
+.vercel
+
+# Ignore all .netlify directories:
+.netlify
+
+# Ignore all .github directories:
+.github
+
+# Ignore all .husky directories:
+.husky
+
+# Ignore all .cache directories:
+.cache
+
+# Ignore all .parcel-cache directories:
+.parcel-cache
+
+# Ignore all .svelte-kit directories:
+.svelte-kit
+
+# Ignore all .svelte directories:
+.svelte
+
+# Ignore all .astro directories:
+.astro
+
+# Ignore all .nuxt directories:
+.nuxt
+
+# Ignore all .output directories:
+.output
+
+# Ignore all .sass-cache directories:
+.sass-cache
+
+# Ignore all .tmp directories:
+.tmp
+
+# Ignore all .tmp directories:
+tmp
+
+# Ignore all temp directories:
+temp
+
+# Ignore all coverage directories:
+coverage
+
+# Ignore all .nyc_output directories:
+.nyc_output
+
+# Ignore all .next directories:
+.next
+
+# Ignore all .vercel directories:
+.vercel
+
+# Ignore all .netlify directories:
+.netlify
+
+# Ignore all .github directories:
+.github
+
+# Ignore all .husky directories:
+.husky
+
+# Ignore all .cache directories:
+.cache
+
+# Ignore all .parcel-cache directories:
+.parcel-cache
+
+# Ignore all .svelte-kit directories:
+.svelte-kit
+
+# Ignore all .svelte directories:
+.svelte
+
+# Ignore all .astro directories:
+.astro
+
+# Ignore all .nuxt directories:
+.nuxt
+
+# Ignore all .output directories:
+.output
+
+# Ignore all .sass-cache directories:
+.sass-cache
+
+# Ignore all .tmp directories:
+.tmp
+
+# Ignore all .tmp directories:
+tmp
+
+# Ignore all temp directories:
+temp
+
+# Ignore all coverage directories:
+coverage
+
+# Ignore all .nyc_output directories:
+.nyc_output

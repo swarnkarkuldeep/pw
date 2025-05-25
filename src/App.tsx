@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { AnimatePresence, motion } from 'framer-motion';
 import { initScrollAnimations, staggerChildren } from './utils/animations';
 import Menu from './components/Menu';
 import Hero from './sections/Hero';
@@ -52,21 +52,20 @@ function App() {
       
       {/* Main Content */}
       <main>
-        <TransitionGroup component={null}>
+        <AnimatePresence>
           {sections.map(({ id, component }) => (
-            <CSSTransition
+            <motion.div
               key={id}
-              classNames="section"
-              timeout={600}
-              appear={true}
-              in={isMounted}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="reveal"
             >
-              <div className="reveal">
-                {component}
-              </div>
-            </CSSTransition>
+              {component}
+            </motion.div>
           ))}
-        </TransitionGroup>
+        </AnimatePresence>
         <Footer />
       </main>
     </div>

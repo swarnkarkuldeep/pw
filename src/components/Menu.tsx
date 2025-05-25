@@ -48,7 +48,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, toggleMenu }) => {
       >
         <div className="w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between">
           <ul className="space-y-2 md:space-y-4 flex-1">
-            {menuItems.map((item) => (
+            {menuItems.map((item, i) => (
               <li 
                 key={item.id}
                 className="group relative overflow-hidden"
