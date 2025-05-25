@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Menu from './components/Menu';
 import Hero from './sections/Hero';
 import About from './sections/About';
+import Content from './sections/Content';
 import Experience from './sections/Experience';
 import Education from './sections/Education';
 import Skills from './sections/Skills';
@@ -25,6 +26,7 @@ function App() {
       {/* Main Content */}
       <main>
         <Hero />
+        <Content />
         <About />
         <Experience />
         <Education />
