@@ -3,7 +3,7 @@ export interface MenuProps {
   toggleMenu: () => void;
 }
 
-export interface SectionProps {
+export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   id: string;
   className?: string;
   children: React.ReactNode;

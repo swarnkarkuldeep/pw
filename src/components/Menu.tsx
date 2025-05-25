@@ -1,7 +1,7 @@
 import React from 'react';
 import { MenuProps } from '../types';
 import { Menu as MenuIcon, X } from 'lucide-react';
-import { motion } from 'framer-motion';
+
 
 const menuItems = [
   { id: 'about', label: '01 - ABOUT ME' },
@@ -21,39 +21,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, toggleMenu }) => {
     }
   };
 
-  const menuVariants = {
-    closed: {
-      opacity: 0,
-      y: '-100%',
-      transition: {
-        duration: 0.8,
-        ease: [0.76, 0, 0.24, 1],
-      }
-    },
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.76, 0, 0.24, 1],
-      }
-    }
-  };
 
-  const itemVariants = {
-    closed: {
-      opacity: 0,
-      y: 20,
-    },
-    open: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.1 + i * 0.1,
-        duration: 0.5,
-      }
-    })
-  };
 
   return (
     <>
@@ -73,19 +41,16 @@ const Menu: React.FC<MenuProps> = ({ isOpen, toggleMenu }) => {
         )}
       </button>
 
-      <motion.div 
-        className="fixed inset-0 bg-[#EEF0DD] z-[99] flex items-center justify-center px-4 py-20 overflow-y-auto"
-        initial="closed"
-        animate={isOpen ? "open" : "closed"}
-        variants={menuVariants}
+      <div 
+        className={`fixed inset-0 bg-[#EEF0DD] z-[99] flex items-center justify-center px-4 py-20 overflow-y-auto transition-opacity duration-300 ${
+          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
       >
         <div className="w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between">
           <ul className="space-y-2 md:space-y-4 flex-1">
-            {menuItems.map((item, i) => (
-              <motion.li 
+            {menuItems.map((item) => (
+              <li 
                 key={item.id}
-                custom={i}
-                variants={itemVariants}
                 className="group relative overflow-hidden"
                 onClick={() => handleMenuItemClick(item.id)}
               >
@@ -95,7 +60,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, toggleMenu }) => {
                   </span>
                 </div>
                 <div className="absolute inset-0 bg-black scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out"></div>
-              </motion.li>
+              </li>
             ))}
           </ul>
           {/* Image on the right side */}
@@ -107,7 +72,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, toggleMenu }) => {
             />
           </div>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import Section from '../components/Section';
+import { motion } from 'framer-motion';
 
 const Portfolio: React.FC = () => {
   return (
@@ -27,22 +28,44 @@ const Portfolio: React.FC = () => {
 
           {/* Column 3: Links */}
           <div className="md:col-span-4 flex flex-col justify-center space-y-2 py-12 px-8">
-            <a
+            <motion.a
               href="https://portfolio.example.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-6xl md:text-7xl font-medium text-black hover:text-gray-600 transition-colors duration-200 text-center block w-full"
+              className="text-6xl md:text-7xl font-medium text-black text-center block w-full relative group"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Go to My Portfolio
-            </a>
-            <div className="text-4xl text-black text-center my-4 w-full">OR</div>
-            <a
+              <span className="relative inline-block">
+                Go to My Portfolio
+                <motion.span 
+                  className="absolute bottom-0 left-0 w-full h-1 bg-black origin-left"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                />
+              </span>
+            </motion.a>
+            
+            <div className="text-4xl text-black text-center my-4 w-full">X</div>
+            
+            <motion.a
               href="/resume.pdf"
               download
-              className="text-6xl md:text-7xl font-medium text-black hover:text-gray-600 transition-colors duration-200 mt-12 text-center block w-full"
+              className="text-6xl md:text-7xl font-medium text-black text-center block w-full mt-12 relative group"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Download My Resume
-            </a>
+              <span className="relative inline-block">
+                Download My Resume
+                <motion.span 
+                  className="absolute bottom-0 left-0 w-full h-1 bg-black origin-left"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                />
+              </span>
+            </motion.a>
           </div>
         </div>
       </div>
