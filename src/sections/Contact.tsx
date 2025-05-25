@@ -1,6 +1,5 @@
 import React from 'react';
 import Section from '../components/Section';
-import Parallax from '../components/Parallax';
 import { motion } from 'framer-motion';
 import { Mail, Phone } from 'lucide-react';
 
@@ -35,20 +34,17 @@ const Contact: React.FC = () => {
         
         {/* Top Right: Image */}
         <div className="relative h-64 md:h-auto mt-8 mr-8 md:col-span-8 lg:mr-16 lg:mt-12">
-          <Parallax speed={0.1} className="h-full">
-            <img 
-              src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-              alt="Contact" 
-              className="w-full h-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-black opacity-20"></div>
-          </Parallax>
+          <img 
+            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+            alt="Contact" 
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black opacity-20"></div>
         </div>
         
         {/* Bottom Left: Contact Details */}
-        <div className="p-8 md:p-12 flex flex-col justify-center md:col-span-4 md:pl-24">
-          <Parallax speed={0.05}>
-            <div className="space-y-4">
+        <div className="p-8 md:p-12 flex flex-col justify-center md:col-span-4 md:pl-32">
+          <div className="space-y-4">
               <div className="flex items-center">
                 <Mail className="mr-6" size={32} />
                 <a href="mailto:kuldeepswarnkar14@gmail.com" className="text-2xl hover:underline tracking-wider">kuldeepswarnkar14@gmail.com</a>
@@ -75,7 +71,6 @@ const Contact: React.FC = () => {
                 </div>
               </div>
             </div>
-          </Parallax>
         </div>
         
         {/* Bottom Right: TOUCH */}

@@ -1,7 +1,6 @@
 import React from 'react';
 import Section from '../components/Section';
-import Parallax from '../components/Parallax';
-import { motion } from 'framer-motion';
+
 
 const leftSkills = [
   "HTML",
@@ -30,12 +29,7 @@ const Skills: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 h-full">
           {/* Left Column - I KNOW and Skills */}
           <div className="md:col-span-4 flex flex-col justify-center p-8 md:p-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <h2 className="text-6xl md:text-8xl font-bold mb-12 whitespace-nowrap" style={{ fontFamily: 'Huitside, sans-serif', lineHeight: '1', letterSpacing: '0.05em', fontSize: '15rem' }}>
                 I KNOW
               </h2>
@@ -56,18 +50,12 @@ const Skills: React.FC = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
           
           {/* Right Column - Image - Wider */}
           <div className="md:col-span-8 h-full">
-            <motion.div
-              className="relative w-full h-full min-h-[30vh] md:min-h-[45vh]"
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <div className="relative w-full h-full min-h-[30vh] md:min-h-[45vh]">
               <img 
                 src="https://i.pinimg.com/736x/f4/4d/7f/f44d7ffb695293e5c12eea03de392ffc.jpg" 
                 alt="Technical Skills" 
@@ -75,25 +63,22 @@ const Skills: React.FC = () => {
                 onMouseOver={(e) => e.currentTarget.style.filter = 'none'}
                 style={{ pointerEvents: 'none' }}
               />
-            </motion.div>
+            </div>
           </div>
         </div>
         <div className="absolute bottom-0 right-0 pr-8 pb-4 text-right">
-          <motion.h2 
-            className="font-bold text-black opacity-30"
-            initial={{ opacity: 1 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+          <h2 
+            className="font-bold text-black opacity-100"
             style={{
-              fontSize: '15rem', 
-              fontFamily: 'Huitside, sans-serif', 
-              lineHeight: '0.9', 
-              letterSpacing: '0.1em',
+              fontSize: '15rem',
+              fontFamily: 'Huitside, sans-serif',
+              lineHeight: '1',
+              letterSpacing: '0.05em',
               whiteSpace: 'nowrap'
             }}
           >
             TECHNICAL SKILLS
-          </motion.h2>
+          </h2>
         </div>
       </div>
     </Section>
