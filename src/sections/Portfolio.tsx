@@ -1,64 +1,89 @@
 import React from 'react';
 import Section from '../components/Section';
-import Parallax from '../components/Parallax';
 import { motion } from 'framer-motion';
+
+const fadeIn = (direction: 'left' | 'right' | 'up' | 'down', delay = 0) => {
+  const variants = {
+    initial: {
+      opacity: 0,
+      x: direction === 'left' ? -50 : direction === 'right' ? 50 : 0,
+      y: direction === 'up' ? -50 : direction === 'down' ? 50 : 0,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay,
+      },
+    },
+  };
+  return variants;
+};
 
 const Portfolio: React.FC = () => {
   return (
-    <Section id="portfolio" className="min-h-screen relative overflow-hidden">
-      <div className="grid grid-cols-1 md:grid-cols-5 h-full">
-        <div className="md:col-span-1 flex items-center justify-center p-4">
-          <motion.h2 
-            className="vertical-text section-heading text-black"
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
+    <Section id="portfolio" className="min-h-[100vh] flex items-center py-32">
+      <div className="container mx-auto px-4 h-full">
+        <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch py-16">
+          {/* Empty column to push content to center */}
+          <div className="hidden md:block md:col-span-1"></div>
+
+          {/* Column 1: Image */}
+          <motion.div
+            className="md:col-span-5 relative overflow-hidden shadow-2xl flex items-center min-h-[600px] md:min-h-[700px]"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeIn('left')}
           >
-            05 - PORTFOLIO
-          </motion.h2>
-        </div>
-        
-        <div className="md:col-span-4 relative">
-          <Parallax speed={0.1} className="h-full">
-            <img 
-              src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-              alt="Portfolio" 
-              className="w-full h-screen object-cover object-center"
+            <img
+              src="https://i.pinimg.com/736x/8a/2c/ec/8a2cec5ee25bf116bffb180766e81dfb.jpg"
+              alt="Portfolio"
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-center justify-center p-8">
-              <motion.div 
-                className="text-center max-w-2xl"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-4xl md:text-6xl font-bold text-white mb-8">MY WORK</h3>
-                <p className="text-xl text-white mb-12">
-                  Explore my complete portfolio showcasing a range of projects 
-                  from web applications to interactive experiences and design systems.
-                </p>
-                
-                <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
-                  <a 
-                    href="https://portfolio.example.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="button bg-white text-black hover:bg-gray-200"
-                  >
-                    View Portfolio Website
-                  </a>
-                  <a 
-                    href="/resume.pdf" 
-                    download
-                    className="button bg-transparent border-2 border-white text-white hover:bg-white hover:text-black"
-                  >
-                    Download Resume
-                  </a>
-                </div>
-              </motion.div>
-            </div>
-          </Parallax>
+          </motion.div>
+
+          {/* Column 2: Vertical Heading */}
+          <motion.div
+            className="md:col-span-2 flex items-center justify-center"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeIn('up', 0.2)}
+          >
+            <h2 className="vertical-text text-8xl font-bold text-black tracking-wider" style={{fontSize: '15rem', fontFamily: 'Huitside, sans-serif', letterSpacing: '0.15em', writingMode: 'vertical-rl', transform: 'rotate(180deg)'}}>
+              PORTFOLIO
+            </h2>
+          </motion.div>
+
+          {/* Column 3: Links */}
+          <motion.div
+            className="md:col-span-4 flex flex-col justify-center space-y-2 py-12 px-8"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeIn('up', 0.4)}
+          >
+            <a
+              href="https://portfolio.example.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-6xl md:text-7xl font-medium text-black hover:text-gray-600 transition-colors duration-200 text-center block w-full"
+            >
+              Go to My Portfolio
+            </a>
+            <div className="text-4xl text-black text-center my-4 w-full">OR</div>
+            <a
+              href="/resume.pdf"
+              download
+              className="text-6xl md:text-7xl font-medium text-black hover:text-gray-600 transition-colors duration-200 mt-12 text-center block w-full"
+            >
+              Download My Resume
+            </a>
+          </motion.div>
+
         </div>
       </div>
     </Section>

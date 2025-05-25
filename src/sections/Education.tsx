@@ -36,11 +36,11 @@ const Education: React.FC = () => {
               viewport={{ once: true }}
               style={{ marginLeft: '4rem', marginTop: '30vh' }}
             >
-              <h3 className="text-4xl md:text-5xl font-bold mb-3 tracking-wider">Bachelor of Technology</h3>
-              <h4 className="text-2xl md:text-3xl mb-3 font-medium">SRM University Andhra Pradesh</h4>
-              <h4 className="text-2xl md:text-3xl mb-4 font-medium">Computer Science</h4>
-              <p className="text-2xl mb-6">2023 - 2027</p>
-              <p className="text-xl leading-relaxed">CURRENTLY NAVIGATING THE WILD WORLD OF COMPUTER SCIENCE, FROM BUILDING BEAUTIFUL UIS TO TEACHING MACHINES HOW TO READ.</p>
+              <h3 className="text-5xl md:text-6xl font-bold mb-2 tracking-wider">Bachelor of Technology</h3>
+              <h4 className="text-3xl md:text-4xl mb-1 font-medium">SRM University Andhra Pradesh</h4>
+              <h4 className="text-3xl md:text-4xl mb-2 font-medium">Computer Science</h4>
+              <p className="text-3xl mb-4">2023 - 2027</p>
+              <p className="text-2xl leading-tight">CURRENTLY NAVIGATING THE WILD WORLD OF COMPUTER SCIENCE, FROM BUILDING BEAUTIFUL UIS TO TEACHING MACHINES HOW TO READ.</p>
             </motion.div>
           </div>
           
