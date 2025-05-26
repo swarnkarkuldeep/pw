@@ -11,7 +11,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 ## 🚀 Features
 
 - ⚡ Blazing fast performance with Vite
-- 🎨 Beautiful, responsive design with Tailwind CSS
+- 🎨 Beautiful, responsive design with Tailwind CSS.
 - ✨ Smooth animations with Framer Motion
 - 📱 Mobile-first, responsive layout
 - 🌐 SEO optimized
