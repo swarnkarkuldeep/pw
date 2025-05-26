@@ -8,29 +8,29 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col md:flex-row bg-[#EEF0DD] overflow-hidden">
+    <section className="relative min-h-dvh flex flex-col md:flex-row bg-[#EEF0DD] overflow-hidden">
       {/* Left Side - Heading with animations */}
-      <div className="w-full md:w-2/5 h-[40vh] md:h-screen flex items-center justify-center md:items-start md:justify-start px-6 sm:px-10 md:px-16 py-8 bg-[#EEF0DD] overflow-hidden">
-        <div className="hero-content">
+      <div className="w-full md:w-2/5 h-[50vh] md:h-dvh flex items-center justify-center md:items-start md:justify-start px-6 sm:px-10 md:px-16 py-8 bg-[#EEF0DD] overflow-hidden">
+        <div className="hero-content w-full">
           <h1 
-            className="text-[5rem] sm:text-[8rem] md:text-[20rem] font-black text-black leading-none tracking-widest text-center md:text-left"
+            className="text-[4.5rem] sm:text-[7rem] md:text-[15rem] lg:text-[20rem] font-black text-black leading-none tracking-widest text-center md:text-left"
             style={{ fontFamily: 'Huitside, sans-serif' }}
           >
-            <span className="block -mb-4 sm:-mb-6 md:-mb-16 animate-fade-up" style={{ animationDelay: '0.1s' }}>RE-</span>
-            <span className="block -mt-4 sm:-mt-6 md:-mt-16 animate-fade-up" style={{ animationDelay: '0.2s' }}>SUME</span>
+            <span className="block -mb-2 sm:-mb-4 md:-mb-8 lg:-mb-16 animate-fade-up" style={{ animationDelay: '0.1s' }}>RE-</span>
+            <span className="block -mt-2 sm:-mt-4 md:-mt-8 lg:-mt-16 animate-fade-up" style={{ animationDelay: '0.2s' }}>SUME</span>
           </h1>
           
           {/* Animated Scroll Indicator */}
-          <div className="hidden md:block absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
-            <div className="w-6 h-10 border-2 border-black rounded-full flex justify-center p-1">
-              <div className="w-1 h-2 bg-black rounded-full animate-scroll-indicator"></div>
+          <div className="hidden md:block absolute bottom-10 left-1/2 transform -translate-x-1/2">
+            <div className="w-6 h-10 border-2 border-black rounded-full flex justify-center p-1 animate-bounce-slow">
+              <div className="w-1 h-2 bg-black rounded-full animate-scroll-dot"></div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Right Side - Image and Overlay with animations */}
-      <div className="w-full md:w-3/5 h-[60vh] md:h-screen relative group">
+      <div className="w-full md:w-3/5 h-[50vh] md:h-dvh relative group">
         <div className="w-full h-full bg-gray-200 flex items-center justify-center overflow-hidden relative">
           {/* Animated Background Elements */}
           <div className="absolute inset-0 bg-grid-pattern opacity-5 animate-pulse animate-float"></div>

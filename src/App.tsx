@@ -46,21 +46,26 @@ function App() {
   ];
 
   return (
-    <div className={`relative transition-opacity duration-500 ${isMounted ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`relative ${isMounted ? 'opacity-100' : 'opacity-0'}`}>
       {/* Menu Button and Overlay */}
       <Menu isOpen={menuOpen} toggleMenu={toggleMenu} />
       
       {/* Main Content */}
       <main>
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           {sections.map(({ id, component }) => (
             <motion.div
               key={id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              transition={{ 
+                duration: 0.6, 
+                ease: [0.4, 0, 0.2, 1],
+                opacity: { duration: 0.3 }
+              }}
               className="reveal"
+              style={{ transformOrigin: 'center top' }}
             >
               {component}
             </motion.div>

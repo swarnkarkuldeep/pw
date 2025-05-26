@@ -2,9 +2,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './utils/**/*.{js,ts,jsx,tsx}', // Make sure your utils path is included
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -96,15 +95,23 @@ module.exports = {
         }
       },
       animation: {
-        'fade-up': 'fade-up 0.6s ease-out',
+        'fade-up': 'fade-up 0.6s ease-out forwards',
         'fade-in-left-bounce': 'fade-in-left-bounce 1s ease-out forwards',
         'fade-in-right-bounce': 'fade-in-right-bounce 1s ease-out forwards',
-        'bounce-slow': 'bounce-slow 2s infinite',
-        'bounce-loop': 'bounce-loop 2s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55)', // More dynamic
-        'scroll-indicator': 'scroll-indicator 1.5s infinite',
+        'bounce-slow': 'bounce-slow 2s ease-in-out infinite',
+        'bounce-loop': 'bounce-loop 2s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55)',
+        'scroll-indicator': 'scroll-indicator 2s ease-in-out infinite',
+        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'scale-pulse': 'scale-pulse 4s ease-in-out infinite',
+        'float-subtle': 'float-subtle 8s ease-in-out infinite',
+        'gradient-shift': 'gradient-shift 15s ease infinite',
+        'scale-in': 'scale-in 0.8s ease-out forwards',
+        'slide-in-up-reveal': 'slide-in-up-reveal 0.8s ease-out forwards',
+        'cursor-blink': 'cursor-blink 1s step-end infinite',
+        'text-reveal': 'text-reveal 0.6s ease-out forwards',
+        'skew-bg': 'skew-bg 8s ease-in-out infinite',
         'scroll-dot': 'scroll-dot 1.8s infinite ease-in-out', // More distinct
-        'pulse': 'pulse 2s infinite',
-        'float': 'float 4s ease-in-out infinite',
         'scale-pulse': 'scale-pulse 3s ease-in-out infinite', // Apply new pulse
         'float-subtle': 'float-subtle 6s ease-in-out infinite', // Apply new float
         'gradient-shift': 'gradient-shift 10s ease-in-out infinite alternate', // Apply new gradient animation
